@@ -1,7 +1,7 @@
 <h1>{{ title }}</h1>
 <nav>
-  <a routerLink="/">Inicio</a>
-  <a routerLink="/adoptantes">Adoptantes</a>
+  <button (click)="abrirLista()">Abrir Lista de Adoptantes</button>
+  <button (click)="abrirFormulario()">Abrir Formulario de Adoptantes</button>
 </nav>
 
 <router-outlet></router-outlet>

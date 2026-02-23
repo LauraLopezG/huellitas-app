@@ -4,15 +4,22 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 
 import { InicioComponent } from './app/components/inicio/inicio.component';
-import { AdoptantesComponent } from './app/components/adoptantes/adoptantes.component';
+import { AdoptantesListaComponent } from './app/components/adoptantes-lista/adoptantes-lista.component';
+import { AdoptantesFormularioComponent } from './app/components/adoptantes-formulario/adoptantes-formulario.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideHttpClient(),
     provideRouter([
       { path: '', component: InicioComponent },
-      { path: 'adoptantes', component: AdoptantesComponent },
-      { path: 'adoptantes/formulario', component: AdoptantesComponent } // ✅ abre formulario
+      {
+        path: 'adoptantes',
+        children: [
+          { path: 'lista', component: AdoptantesListaComponent },
+          { path: 'formulario', component: AdoptantesFormularioComponent },
+          { path: '', redirectTo: 'formulario', pathMatch: 'full' }
+        ]
+      }
     ])
   ]
 });
