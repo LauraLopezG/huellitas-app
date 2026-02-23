@@ -1,0 +1,7 @@
+<h2>Lista de Adoptantes</h2>
+<input type="text" [(ngModel)]="filtro" placeholder="Buscar adoptante..." />
+<ul>
+  <li *ngFor="let a of adoptantesFiltrados">
+    <strong>{{ a.nombre }}</strong> - {{ a.telefono }}
+  </li>
+</ul>

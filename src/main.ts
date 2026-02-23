@@ -17,7 +17,7 @@ bootstrapApplication(AppComponent, {
         children: [
           { path: 'lista', component: AdoptantesListaComponent },
           { path: 'formulario', component: AdoptantesFormularioComponent },
-          { path: '', redirectTo: 'formulario', pathMatch: 'full' }
+          { path: '', redirectTo: 'formulario', pathMatch: 'full' } // ✅ abre formulario por defecto
         ]
       }
     ])

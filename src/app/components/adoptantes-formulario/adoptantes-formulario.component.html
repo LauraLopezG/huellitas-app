@@ -1,0 +1,6 @@
+<h2>Formulario de Adoptantes</h2>
+<form [formGroup]="form" (ngSubmit)="agregarAdoptante()">
+  <input formControlName="nombre" placeholder="Nombre del adoptante" />
+  <input formControlName="telefono" placeholder="Teléfono" />
+  <button type="submit">Agregar</button>
+</form>
