@@ -1,16 +1,25 @@
-<h2>Formulario de Adoptantes</h2>
-<form>
-  <label>Nombre:</label>
-  <input type="text" />
+<h2>Adoptantes</h2>
 
-  <label>Edad:</label>
-  <input type="number" />
+<div class="tabs">
+  <button (click)="tab='lista'">Lista</button>
+  <button (click)="tab='formulario'">Formulario</button>
+</div>
 
-  <label>Ciudad:</label>
-  <input type="text" />
+<!-- Lista -->
+<div *ngIf="tab==='lista'">
+  <input type="text" [(ngModel)]="filtro" placeholder="Buscar adoptante..." />
+  <ul>
+    <li *ngFor="let a of adoptantesFiltrados">
+      <strong>{{ a.nombre }}</strong> - {{ a.telefono }}
+    </li>
+  </ul>
+</div>
 
-  <label>Motivo de adopción:</label>
-  <textarea></textarea>
-
-  <button type="submit">Enviar solicitud</button>
-</form>
+<!-- Formulario -->
+<div *ngIf="tab==='formulario'">
+  <form [formGroup]="form" (ngSubmit)="agregarAdoptante()">
+    <input formControlName="nombre" placeholder="Nombre del adoptante" />
+    <input formControlName="telefono" placeholder="Teléfono" />
+    <button type="submit">Agregar</button>
+  </form>
+</div>

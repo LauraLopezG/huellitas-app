@@ -3,9 +3,11 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],   // 👈 Aquí se importa RouterOutlet
+  standalone: true,   // ✅ en Angular 21 debe ser standalone
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent { }
+export class AppComponent {
+  title = 'huellitas-app';
+}

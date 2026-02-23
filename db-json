@@ -1,0 +1,7 @@
+{
+  "adoptantes": [
+    { "id": 1, "nombre": "Laura", "edad": 25 },
+    { "id": 2, "nombre": "Carlos", "edad": 30 },
+    { "id": 3, "nombre": "María", "edad": 28 }
+  ]
+}

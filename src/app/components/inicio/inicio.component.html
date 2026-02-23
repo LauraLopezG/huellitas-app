@@ -1,0 +1,14 @@
+<h2>Bienvenida a Huellitas 🐾</h2>
+
+<div *ngIf="!isLoggedIn">
+  <form [formGroup]="loginForm" (ngSubmit)="iniciarSesion()">
+    <input formControlName="usuario" placeholder="Usuario" />
+    <input formControlName="password" type="password" placeholder="Contraseña" />
+    <button type="submit">Iniciar Sesión</button>
+  </form>
+</div>
+
+<div *ngIf="isLoggedIn">
+  <p>Hola, {{ usuario }} 👋</p>
+  <button (click)="cerrarSesion()">Cerrar Sesión</button>
+</div>
