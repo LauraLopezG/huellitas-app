@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AdoptantesComponent } from './adoptantes.component';
 
-import { Adoptantes } from './adoptantes';
-
-describe('Adoptantes', () => {
-  let component: Adoptantes;
-  let fixture: ComponentFixture<Adoptantes>;
+describe('AdoptantesComponent', () => {
+  let component: AdoptantesComponent;
+  let fixture: ComponentFixture<AdoptantesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Adoptantes]
+      declarations: [ AdoptantesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Adoptantes);
+    fixture = TestBed.createComponent(AdoptantesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,3 +20,5 @@ describe('Adoptantes', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
