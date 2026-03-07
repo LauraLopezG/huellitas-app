@@ -12,4 +12,12 @@ Abrir Formulario de Adoptantes
 
 </nav>
 
+<h2>Mascotas disponibles</h2>
+
+<ul>
+<li *ngFor="let mascota of mascotas">
+{{mascota.nombre}} - {{mascota.raza}} - {{mascota.edad}} años
+</li>
+</ul>
+
 <router-outlet></router-outlet>
