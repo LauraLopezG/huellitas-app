@@ -1,59 +1,164 @@
-# HuellitasApp
+Guía paso a paso para ejecutar el proyecto Huellitas App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
 
-## Development server
+1. Programas necesarios
 
-To start a local development server, run:
+Antes de ejecutar el proyecto se deben tener instaladas las siguientes herramientas:
 
-```bash
+1.1 Editor de código
+
+Visual Studio Code
+
+Versión recomendada: 1.85 o superior
+
+Extensiones recomendadas:
+
+Angular Language Service
+
+Prettier
+
+ESLint
+
+1.2 Node.js
+
+Node.js
+
+Versión recomendada: 18.x o 20.x LTS
+
+Verificar instalación:
+
+node -v
+npm -v
+1.3 Angular CLI
+
+Angular CLI
+
+Versión recomendada: 17 o superior
+
+Instalar:
+
+npm install -g @angular/cli
+
+Verificar:
+
+ng version
+1.4 Servidor de base de datos (opcional dependiendo del proyecto)
+
+Si se usa base de datos con PHP:
+
+XAMPP
+
+Versión recomendada: 8.2
+
+Servicios a iniciar:
+
+Apache
+
+MySQL
+
+2. Abrir el proyecto
+
+Abrir Visual Studio Code
+
+Ir a:
+
+File → Open Folder
+
+Seleccionar la carpeta:
+
+huellitas-app
+3. Verificar estructura del proyecto
+
+En la carpeta raíz deben existir archivos como:
+
+huellitas-app
+ ├─ src
+ ├─ public
+ ├─ angular.json
+ ├─ package.json   ← MUY IMPORTANTE
+ ├─ tsconfig.json
+ └─ package-lock.json
+
+⚠️ En tu captura no aparece package.json, por eso npm genera el error.
+
+4. Crear el archivo package.json (si no existe)
+
+En la terminal ejecutar:
+
+npm init -y
+
+Esto generará automáticamente el archivo.
+
+5. Instalar dependencias del proyecto
+
+En la terminal ejecutar:
+
+npm install
+
+Esto instalará:
+
+Angular
+
+TypeScript
+
+RxJS
+
+Dependencias necesarias del proyecto
+
+6. Ejecutar el servidor de desarrollo
+
+Ejecutar:
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+El sistema compilará la aplicación.
 
-## Code scaffolding
+Salida esperada:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+✔ Compiled successfully.
+7. Abrir la aplicación en el navegador
 
-```bash
-ng generate component component-name
-```
+Ir a:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+http://localhost:4200
 
-```bash
-ng generate --help
-```
+Aquí se visualizará la aplicación Huellitas App.
 
-## Building
+8. Ejecutar API o base de datos (si el proyecto la usa)
 
-To build the project run:
+Si se usa API con PHP o base de datos:
 
-```bash
-ng build
-```
+Abrir XAMPP
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Iniciar:
 
-## Running unit tests
+Apache
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+MySQL
 
-```bash
-ng test
-```
+Importar la base de datos en:
 
-## Running end-to-end tests
+http://localhost/phpmyadmin
+9. Problemas comunes
+Error: ENOENT package.json
 
-For end-to-end (e2e) testing, run:
+Solución:
 
-```bash
-ng e2e
-```
+npm init -y
+npm install
+Error Angular *ngFor NG8103
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Importar CommonModule:
 
-## Additional Resources
+imports: [CommonModule]
+Error ngModel
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Agregar:
+
+import { FormsModule } from '@angular/forms';
+10. Comando completo de ejecución
+
+Secuencia final:
+
+npm install
+ng serve
